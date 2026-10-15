@@ -231,6 +231,12 @@ img, svg, canvas { max-width: 100%; display: block; }
 .mini-fila .ok { color: var(--ok); background: rgba(52, 211, 153, .14); }
 .mini-fila .pend { color: var(--pend); background: rgba(251, 113, 133, .14); }
 
+.app-ventana + .app-ventana { margin-top: 22px; }
+.mini-progreso i.p62 { width: 62%; }
+.semana { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+.semana b { display: grid; place-items: center; aspect-ratio: 1; font: 700 .68rem var(--mono); color: #55688f; background: var(--panel); border: 1px solid var(--linea); }
+.semana b.ok { color: var(--ok); background: rgba(52, 211, 153, .14); border-color: rgba(52, 211, 153, .35); }
+.semana b.hoy { color: var(--cian); border-color: var(--cian); box-shadow: 0 0 10px rgba(34, 211, 238, .35); }
 .slot { margin-top: 22px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; padding: clamp(22px, 3.5vw, 32px); border: 2px dashed #2a3a5c; background: rgba(34, 211, 238, .03); }
 .slot-chip { position: relative; width: 62px; height: 62px; border: 2px solid var(--linea); background: #0a1120; flex: none; }
 .slot-chip::before { content: "?"; position: absolute; inset: 0; display: grid; place-items: center; font: 800 1.5rem var(--mono); color: var(--cian); }
