@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Holbaph Technologies — Microapps y sistemas a medida · ESP32, sensores y domótica</title>
+<meta name="description" content="Desarrollamos microapps, software a medida y soluciones con ESP32, sensores y domótica. De la placa a la pantalla: diseño, construcción, hosting y soporte.">
+<meta name="theme-color" content="#070b14">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Holbaph Technologies — Microapps y sistemas a medida">
+<meta property="og:description" content="Software a medida, ESP32, sensores y domótica. Pequeños sistemas que resuelven problemas reales.">
+<meta property="og:url" content="https://holbaph.github.io/">
+<meta property="og:locale" content="es_CL">
+<meta property="og:image" content="https://holbaph.github.io/logo/og-holbaph.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://holbaph.github.io/logo/og-holbaph.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="logo/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="logo/apple-touch-icon.png">
+<link rel="canonical" href="https://holbaph.github.io/">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="css/landing.css">
+<script src="js/landing.js"></script>
+</head>
+<body>
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<div class="progreso" id="progreso" aria-hidden="true"></div>
+
+<header class="cabecera">
+  <div class="contenedor cabecera-fila">
+    <a class="marca" href="#inicio" aria-label="Holbaph Technologies, ir al inicio">
+      <img class="marca-img" src="logo/holbaph-compacto-oscuro.svg" alt="Holbaph Technologies" height="42">
+    </a>
+    <button class="menu-boton" id="menuBoton" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#servicios"><b>01</b> Servicios</a>
+      <a href="#ejemplos"><b>02</b> Ejemplos</a>
+      <a href="#proceso"><b>03</b> Proceso</a>
+      <a href="#proyectos"><b>04</b> Microapps</a>
+      <a class="boton boton-chico" href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- ===== Portada ===== -->
+  <section class="portada" id="inicio">
+    <canvas class="circuitos" id="circuitos" aria-hidden="true"></canvas>
+    <div class="contenedor portada-grid">
+      <div class="portada-texto">
+        <p class="rotulo"><span class="led"></span> Software + electrónica a medida</p>
+        <h1>Microapps, sensores y sistemas <span class="cian">a tu medida</span><span class="cursor" aria-hidden="true">_</span></h1>
+        <p class="bajada">Desarrollamos software a medida y soluciones con <strong>ESP32</strong>, <strong>sensores</strong> y <strong>domótica</strong>, y alojamos tus microapps aquí mismo. Sistemas pequeños, claros y bien hechos, que resuelven un problema real sin la complejidad ni el costo de una plataforma gigante.</p>
+        <div class="acciones">
+          <a class="boton" href="#contacto">Cuéntanos tu proyecto <span aria-hidden="true">▸</span></a>
+          <a class="boton boton-borde" href="#servicios">Ver qué hacemos</a>
+        </div>
+        <ul class="specs" aria-label="Tecnologías">
+          <li>ESP32</li><li>WiFi</li><li>BLE</li><li>I²C</li><li>SPI</li><li>MQTT</li><li>PWA</li><li>PostgreSQL</li>
+        </ul>
+      </div>
+
+      <div class="portada-panel">
+        <div class="consola" role="img" aria-label="Ejemplo de monitor serial de una placa ESP32 enviando lecturas">
+          <div class="consola-barra"><i></i><i></i><i></i><span>serial monitor · esp32-holbaph · 115200 baud</span></div>
+          <pre class="consola-cuerpo" id="consola" aria-hidden="true"><span class="c-cmd">&gt; boot holbaph-esp32 v1.0</span>
+<span class="c-ok">[ OK ]</span> wifi conectado  →  holbaph.cl
+<span class="c-ok">[ OK ]</span> sensor DHT22   temp=23.4°C hum=48%
+<span class="c-ok">[ OK ]</span> relé canal 1   estado=ON
+<span class="c-ok">[ OK ]</span> POST /api/lectura  →  200
+<span class="c-cmd">&gt; sistema listo</span></pre>
+        </div>
+
+        <div class="lecturas" aria-label="Lecturas de ejemplo (simuladas)">
+          <div class="lectura" data-sensor="temp" data-base="23.4" data-var="0.25" data-dec="1">
+            <span class="lectura-nombre">TEMPERATURA</span>
+            <span class="lectura-valor"><b>23.4</b><small>°C</small></span>
+            <svg viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true"><polyline points=""/></svg>
+          </div>
+          <div class="lectura" data-sensor="hum" data-base="48" data-var="0.7" data-dec="0">
+            <span class="lectura-nombre">HUMEDAD</span>
+            <span class="lectura-valor"><b>48</b><small>%</small></span>
+            <svg viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true"><polyline points=""/></svg>
+          </div>
+          <div class="lectura" data-sensor="w" data-base="312" data-var="9" data-dec="0">
+            <span class="lectura-nombre">CONSUMO</span>
+            <span class="lectura-valor"><b>312</b><small>W</small></span>
+            <svg viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true"><polyline points=""/></svg>
+          </div>
+        </div>
+        <p class="demo-nota">Datos de demostración simulados</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Cinta de protocolos ===== -->
+  <div class="cinta" aria-hidden="true">
+    <div class="cinta-pista">
+      <span>WiFi</span><span>Bluetooth LE</span><span>MQTT</span><span>HTTP / REST</span><span>I²C</span><span>SPI</span><span>UART</span><span>PWM</span><span>ADC</span><span>GPIO</span><span>OTA</span><span>JSON</span>
+      <span>WiFi</span><span>Bluetooth LE</span><span>MQTT</span><span>HTTP / REST</span><span>I²C</span><span>SPI</span><span>UART</span><span>PWM</span><span>ADC</span><span>GPIO</span><span>OTA</span><span>JSON</span>
+    </div>
+  </div>
+
+  <!-- ===== Servicios ===== -->
+  <section class="seccion" id="servicios">
+    <div class="contenedor">
+      <header class="seccion-cab">
+        <p class="indice">01 // SERVICIOS</p>
+        <h2>De la placa a la pantalla</h2>
+        <p class="seccion-bajada">Software y hardware en un solo lugar: nos hacemos cargo de que el sensor mida, el dato llegue y la app lo muestre.</p>
+      </header>
+
+      <div class="modulos">
+        <article class="modulo reveal"><div class="modulo-int">
+          <span class="mod-id">MOD-01</span>
+          <div class="icono-caja"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
+          <h3>Microapps y PWA</h3>
+          <p>Aplicaciones web livianas que se instalan en el celular y se usan como una app nativa: control de gastos, inventarios, formularios, reservas, paneles.</p>
+          <ul class="mod-tags"><li>PWA</li><li>Web</li><li>Offline</li></ul>
+        </div></article>
+
+        <article class="modulo reveal"><div class="modulo-int">
+          <span class="mod-id">MOD-02</span>
+          <div class="icono-caja"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 3v3M12 3v3M15 3v3M9 18v3M12 18v3M15 18v3M3 9h3M3 12h3M3 15h3M18 9h3M18 12h3M18 15h3"/></svg></div>
+          <h3>IoT con ESP32</h3>
+          <p>Placas ESP32 con WiFi y Bluetooth que miden y controlan cosas reales, y envían los datos a la nube o a tu propia red local.</p>
+          <ul class="mod-tags"><li>ESP32</li><li>WiFi</li><li>BLE</li></ul>
+        </div></article>
+
+        <article class="modulo reveal"><div class="modulo-int">
+          <span class="mod-id">MOD-03</span>
+          <div class="icono-caja"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 14.5V5a2 2 0 1 0-4 0v9.5a4 4 0 1 0 4 0z"/><path d="M12 9v7"/></svg></div>
+          <h3>Sensores y monitoreo</h3>
+          <p>Temperatura, humedad, movimiento, nivel, consumo eléctrico y más. Lecturas en tiempo real, historial, gráficos y alertas al celular.</p>
+          <ul class="mod-tags"><li>Tiempo real</li><li>Alertas</li><li>Historial</li></ul>
+        </div></article>
+
+        <article class="modulo reveal"><div class="modulo-int">
+          <span class="mod-id">MOD-04</span>
+          <div class="icono-caja"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M10 20v-5h4v5"/></svg></div>
+          <h3>Domótica</h3>
+          <p>Luces, riego, portones, enchufes y climatización controlados desde el celular, con automatizaciones por horario o por sensores.</p>
+          <ul class="mod-tags"><li>Relés</li><li>Escenas</li><li>Horarios</li></ul>
+        </div></article>
+
+        <article class="modulo reveal"><div class="modulo-int">
+          <span class="mod-id">MOD-05</span>
+          <div class="icono-caja"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 5l-3 14"/></svg></div>
+          <h3>Software a medida</h3>
+          <p>Sistemas y APIs hechos para tu forma de trabajar, cuando una planilla o un programa genérico se queda corto.</p>
+          <ul class="mod-tags"><li>APIs</li><li>Bases de datos</li><li>Reportes</li></ul>
+        </div></article>
+
+        <article class="modulo reveal"><div class="modulo-int">
+          <span class="mod-id">MOD-06</span>
+          <div class="icono-caja"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.8"/><rect x="3" y="14" width="18" height="6" rx="1.8"/><path d="M7 7h.01M7 17h.01"/></svg></div>
+          <h3>Hosting y mantención</h3>
+          <p>Publicamos tu sistema en servidor propio con HTTPS y respaldos automáticos, y seguimos a tu lado después de la entrega.</p>
+          <ul class="mod-tags"><li>HTTPS</li><li>Respaldos</li><li>Soporte</li></ul>
+        </div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Ejemplos (hoja de datos) ===== -->
+  <section class="seccion seccion-alt" id="ejemplos">
+    <div class="contenedor">
+      <header class="seccion-cab">
+        <p class="indice">02 // EJEMPLOS</p>
+        <h2>Ideas que se pueden construir</h2>
+        <p class="seccion-bajada">Como en una hoja de datos: qué mide, qué controla y qué recibes. (Los pines son ilustrativos.)</p>
+      </header>
+
+      <div class="tabla-marco reveal">
+        <table class="datasheet">
+          <thead><tr><th>Pin</th><th>Caso de uso</th><th>Cómo funciona</th><th>Resultado</th></tr></thead>
+          <tbody>
+            <tr><td data-k="Pin"><code>GPIO 04</code></td><td data-k="Caso"><strong>Riego inteligente</strong></td><td data-k="Funciona">Sensor de humedad de suelo → relé de la bomba</td><td data-k="Resultado">Riega solo si hace falta y avisa al celular</td></tr>
+            <tr><td data-k="Pin"><code>GPIO 05</code></td><td data-k="Caso"><strong>Control de temperatura</strong></td><td data-k="Funciona">Sonda en bodega, sala o cámara de frío</td><td data-k="Resultado">Alerta si la temperatura sale de rango</td></tr>
+            <tr><td data-k="Pin"><code>GPIO 12</code></td><td data-k="Caso"><strong>Casa conectada</strong></td><td data-k="Funciona">Relés en luces, enchufes y portón</td><td data-k="Resultado">Escenas, horarios y control desde el celular</td></tr>
+            <tr><td data-k="Pin"><code>ADC 34</code></td><td data-k="Caso"><strong>Medidor de consumo</strong></td><td data-k="Funciona">Sensor de corriente por equipo</td><td data-k="Resultado">Gráficos de energía por día y por mes</td></tr>
+            <tr><td data-k="Pin"><code>HTTPS 443</code></td><td data-k="Caso"><strong>Panel de inventario</strong></td><td data-k="Funciona">Microapp web instalable (PWA)</td><td data-k="Resultado">Stock, entradas y salidas de un negocio pequeño</td></tr>
+            <tr><td data-k="Pin"><code>PDF / XLSX</code></td><td data-k="Caso"><strong>Reportes automáticos</strong></td><td data-k="Funciona">Tus datos convertidos en informes</td><td data-k="Resultado">Listos para imprimir o enviar</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Proceso ===== -->
+  <section class="seccion" id="proceso">
+    <div class="contenedor">
+      <header class="seccion-cab">
+        <p class="indice">03 // PROCESO</p>
+        <h2>Simple, rápido y contigo en el centro</h2>
+      </header>
+
+      <ol class="pipeline" id="pipeline">
+        <li><span class="pad">1</span><span class="fase">FASE 1 / 4</span><h3>Conversamos</h3><p>Entendemos el problema, qué quieres lograr y con qué cuentas hoy.</p></li>
+        <li><span class="pad">2</span><span class="fase">FASE 2 / 4</span><h3>Diseñamos</h3><p>Te proponemos una solución simple, con alcance, plazo y costo claros.</p></li>
+        <li><span class="pad">3</span><span class="fase">FASE 3 / 4</span><h3>Construimos</h3><p>Armamos un prototipo rápido y lo ajustamos contigo hasta que funcione como necesitas.</p></li>
+        <li><span class="pad">4</span><span class="fase">FASE 4 / 4</span><h3>Publicamos y acompañamos</h3><p>Lo dejamos funcionando en línea, con respaldos, y seguimos disponibles para mejorarlo.</p></li>
+      </ol>
+
+      <ul class="garantias">
+        <li class="reveal"><span class="led"></span><div><strong>Hecho a tu medida</strong><span>Sin pagar por funciones que no vas a usar.</span></div></li>
+        <li class="reveal"><span class="led"></span><div><strong>Tus datos son tuyos</strong><span>En un servidor controlado, con copias de seguridad.</span></div></li>
+        <li class="reveal"><span class="led"></span><div><strong>Hardware + software</strong><span>Un solo equipo para todo el sistema, de punta a punta.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Microapps ===== -->
+  <section class="seccion seccion-alt" id="proyectos">
+    <div class="contenedor">
+      <header class="seccion-cab">
+        <p class="indice">04 // MICROAPPS</p>
+        <h2>Aplicaciones listas, alojadas en holbaph.cl</h2>
+        <p class="seccion-bajada">Cada microapp vive en su propia dirección, con HTTPS, respaldos y soporte. Estas son algunas; sumamos nuevas todo el tiempo.</p>
+      </header>
+
+      <!-- Para agregar una microapp: duplica un bloque .app-ventana (y cambia título, texto, chips y enlace). -->
+      <div class="app-ventana reveal">
+        <div class="app-barra">
+          <span class="app-estado"><span class="led led-verde"></span> ONLINE</span>
+          <span class="app-url">holbaph.github.io/finanzas-familiares</span>
+          <span class="app-tipo">PWA · acceso con cuenta</span>
+        </div>
+        <div class="app-cuerpo">
+          <div class="app-info">
+            <h3>Finanzas Familiares</h3>
+            <p>Una aplicación para llevar el control del hogar: deudas y créditos en cuotas, gastos, ingresos, cierres de mes e informes en PDF y Excel. Se instala en el celular como una app, con login y bloqueo con PIN o Face ID, y guarda los datos en un servidor propio con respaldos diarios.</p>
+            <ul class="specs specs-chicos"><li>PWA</li><li>Node.js</li><li>PostgreSQL</li><li>Informes PDF</li></ul>
+            <div class="acciones">
+              <a class="boton boton-chico" href="https://holbaph.github.io/finanzas-familiares/" rel="noopener">Abrir app <span aria-hidden="true">▸</span></a>
+            </div>
+          </div>
+          <div class="app-visual" aria-hidden="true">
+            <div class="telefono">
+              <div class="telefono-barra"></div>
+              <div class="mini-tarjeta"><span>Ingresos</span><strong>$1.749.000</strong></div>
+              <div class="mini-tarjeta"><span>Gastos del mes</span><strong>$1.056.966</strong></div>
+              <div class="mini-progreso"><i></i></div>
+              <div class="mini-fila"><span>Crédito auto</span><b class="ok">Pagado</b></div>
+              <div class="mini-fila"><span>Electricidad</span><b class="pend">Pendiente</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slot reveal">
+        <div class="slot-chip" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="slot-texto">
+          <p class="indice">SLOT LIBRE</p>
+          <h3>Tu próxima microapp, aquí</h3>
+          <p>La diseñamos, la construimos y la publicamos en su propia dirección (por ejemplo <strong>tuapp.holbaph.cl</strong>), con HTTPS, respaldos y soporte incluidos.</p>
+        </div>
+        <a class="boton" href="#contacto">Quiero la mía <span aria-hidden="true">▸</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contacto ===== -->
+  <section class="seccion contacto" id="contacto">
+    <div class="contenedor contacto-grid">
+      <div>
+        <p class="indice">05 // CONTACTO</p>
+        <h2>¿Tienes un proyecto en mente?</h2>
+        <p class="seccion-bajada">Cuéntanos qué necesitas, aunque todavía sea una idea a medias. Te respondemos con una propuesta simple y sin compromiso.</p>
+        <p class="contacto-directo">También puedes escribirnos a <a id="correoDirecto" href="mailto:contacto@holbaph.cl">contacto@holbaph.cl</a></p>
+      </div>
+
+      <form class="formulario" id="formContacto" novalidate>
+        <div class="formulario-barra"><i></i><i></i><i></i><span>nueva_consulta.sh</span></div>
+        <label><span>&gt; nombre</span>
+          <input type="text" name="nombre" autocomplete="name" required>
+        </label>
+        <label><span>&gt; correo</span>
+          <input type="email" name="correo" autocomplete="email" required>
+        </label>
+        <label><span>&gt; que_necesitas</span>
+          <textarea name="mensaje" rows="5" placeholder="Ej: quiero medir la temperatura de mi bodega y recibir una alerta en el celular" required></textarea>
+        </label>
+        <button class="boton boton-ancho" type="submit">Enviar consulta <span aria-hidden="true">▸</span></button>
+        <p class="formulario-nota" id="formNota" role="status" aria-live="polite">Se abrirá tu aplicación de correo con el mensaje listo para enviar.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie-fila">
+    <span>© <span id="anio">2026</span> Holbaph Technologies · Chile</span>
+    <span class="pie-lema"><span class="led led-verde"></span> Microapps, ESP32, sensores y domótica a medida</span>
+  </div>
+</footer>
+
+</body>
+</html>

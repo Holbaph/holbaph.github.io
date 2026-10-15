@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 397.0 341.7" role="img" aria-label="Holbaph Technologies">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
+  <g transform="translate(115.5 0) scale(2.34375)"><g fill="none" stroke="url(#g)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 14V5M22 50v9M14 22H5M50 22h9M32 14V5M32 50v9M14 32H5M50 32h9M42 14V5M42 50v9M14 42H5M50 42h9" stroke-width="4.2"/>
+    <path d="M24 16H48V48H16V24Z" fill="url(#g)" stroke-width="5.5"/>
+  </g>
+  <g fill="none" stroke="#070b14" stroke-linecap="round">
+    <path d="M25 24v16M39 24v16M25 32h14" stroke-width="5.6"/>
+  </g>
+  <circle cx="32" cy="32" r="4.6" fill="#070b14"/>
+  <circle cx="32" cy="32" r="1.9" fill="#eef2fb"/></g>
+  <g transform="translate(5.5 194)" fill="none" stroke="#0a0f1c" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0V60M0 38a18 18 0 0 1 36 0V60"/><circle cx="79" cy="40" r="20"/><path d="M122 0V60"/><path d="M145 0V60"/><circle cx="165" cy="40" r="20"/><circle cx="228" cy="40" r="20"/><path d="M248 20V60"/><path d="M271 20V80"/><circle cx="291" cy="40" r="20"/><path d="M334 0V60M334 38a18 18 0 0 1 36 0V60"/></g>
+  <g transform="translate(5.5 301.5)" fill="none" stroke="#4a5876" stroke-linecap="round" stroke-linejoin="round"><path transform="translate(0.00 0) scale(1)" d="M0 0H13M6.5 0V20" stroke-width="4.20"/><path transform="translate(33.64 0) scale(1)" d="M13 0H0V20H13M0 10H11" stroke-width="4.20"/><path transform="translate(67.27 0) scale(1)" d="M13 5Q13 0 8 0H5Q0 0 0 5V15Q0 20 5 20H8Q13 20 13 15" stroke-width="4.20"/><path transform="translate(100.91 0) scale(1)" d="M0 0V20M13 0V20M0 10H13" stroke-width="4.20"/><path transform="translate(134.55 0) scale(1)" d="M0 20V0L13 20V0" stroke-width="4.20"/><path transform="translate(168.18 0) scale(1)" d="M5 0H8Q13 0 13 5V15Q13 20 8 20H5Q0 20 0 15V5Q0 0 5 0Z" stroke-width="4.20"/><path transform="translate(201.82 0) scale(1)" d="M0 0V20H13" stroke-width="4.20"/><path transform="translate(235.45 0) scale(1)" d="M5 0H8Q13 0 13 5V15Q13 20 8 20H5Q0 20 0 15V5Q0 0 5 0Z" stroke-width="4.20"/><path transform="translate(269.09 0) scale(1)" d="M13 5Q13 0 8 0H5Q0 0 0 5V15Q0 20 5 20H8Q13 20 13 15V10H7" stroke-width="4.20"/><path transform="translate(302.73 0) scale(1)" d="M0 0V20" stroke-width="4.20"/><path transform="translate(323.36 0) scale(1)" d="M13 0H0V20H13M0 10H11" stroke-width="4.20"/><path transform="translate(357.00 0) scale(1)" d="M13 4.5Q13 0 8 0H5.5Q0.5 0 0.5 5Q0.5 9 6.5 10Q13 11 13 15Q13 20 8 20H5Q0 20 0 15.5" stroke-width="4.20"/></g>
+</svg>
