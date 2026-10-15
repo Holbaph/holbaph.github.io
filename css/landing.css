@@ -95,6 +95,8 @@ img, svg, canvas { max-width: 100%; display: block; }
 @keyframes parpadeo { 50% { opacity: 0; } }
 .bajada { margin-top: 22px; font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--suave); max-width: 56ch; }
 .bajada strong { color: var(--texto); }
+.eslogan { margin-top: 24px; max-width: 54ch; padding: 12px 16px; border-left: 3px solid var(--violeta); background: rgba(167, 139, 250, .07); color: var(--suave); font-size: .98rem; }
+.eslogan b { color: var(--texto); }
 .acciones { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
 .specs { list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .specs li { font-family: var(--mono); font-size: .74rem; color: var(--suave); padding: 5px 9px; border: 1px solid var(--linea); background: rgba(13, 21, 38, .7); }

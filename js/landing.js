@@ -331,8 +331,9 @@ function iniciarFormulario() {
     }
     nota.classList.remove('error');
     nota.textContent = 'Abriendo tu correo… si no se abre, escríbenos a ' + CONTACTO_EMAIL + '.';
-    var asunto = 'Consulta desde holbaph.cl — ' + nombre;
-    var cuerpo = mensaje + '\n\n—\n' + nombre + '\n' + correo;
+    var cuando = form.cuando ? form.cuando.value.trim() : '';
+    var asunto = 'Agendar consulta — ' + nombre;
+    var cuerpo = mensaje + (cuando ? '\n\nDisponibilidad: ' + cuando : '') + '\n\n—\n' + nombre + '\n' + correo;
     window.location.href = 'mailto:' + CONTACTO_EMAIL + '?subject=' + encodeURIComponent(asunto) + '&body=' + encodeURIComponent(cuerpo);
   });
 }
