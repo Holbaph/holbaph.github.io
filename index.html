@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Holbaph Technologies — Microapps y automatización con ESP32, Arduino, sensores e inteligencia visual</title>
 <meta name="description" content="Microapps a medida y automatización con ESP32, Arduino, sensores, actuadores, mediciones, inteligencia visual y sistemas de autoaprendizaje. Agenda tu consulta y buscamos una solución a tus necesidades informáticas y tecnológicas.">
-<meta name="theme-color" content="#070b14">
-<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0f17" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'none'; connect-src 'none'; object-src 'none'; media-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:type" content="website">
@@ -30,22 +31,22 @@
 <body>
 
 <a class="saltar" href="#contenido">Saltar al contenido</a>
-<div class="progreso" id="progreso" aria-hidden="true"></div>
 
 <header class="cabecera">
-  <div class="contenedor cabecera-fila">
+  <div class="w cabecera-fila">
     <a class="marca" href="#inicio" aria-label="Holbaph Technologies, ir al inicio">
-      <img class="marca-img" src="logo/holbaph-compacto-oscuro.svg" alt="Holbaph Technologies" height="42">
+      <img class="logo-claro" src="logo/holbaph-compacto-claro.svg" alt="Holbaph Technologies" height="34">
+      <img class="logo-oscuro" src="logo/holbaph-compacto-oscuro.svg" alt="" height="34" aria-hidden="true">
     </a>
-    <button class="menu-boton" id="menuBoton" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="menu" id="menu" aria-label="Principal">
-      <a href="#servicios"><b>01</b> Servicios</a>
-      <a href="#ejemplos"><b>02</b> Ejemplos</a>
-      <a href="#proceso"><b>03</b> Proceso</a>
-      <a href="#proyectos"><b>04</b> Microapps</a>
-      <a class="boton boton-chico" href="#contacto">Agendar</a>
+    <nav class="menu" aria-label="Principal">
+      <a class="enlace" href="#servicios">Servicios</a>
+      <a class="enlace" href="#microapps">Microapps</a>
+      <a class="enlace" href="#contacto">Agendar</a>
+      <div class="tema" role="group" aria-label="Apariencia">
+        <button type="button" data-tema="claro" aria-label="Fondo claro" title="Fondo claro">☀️</button>
+        <button type="button" data-tema="auto" aria-label="Automático (según tu dispositivo)" title="Automático">🖥️</button>
+        <button type="button" data-tema="oscuro" aria-label="Fondo oscuro" title="Fondo oscuro">🌙</button>
+      </div>
     </nav>
   </div>
 </header>
@@ -54,250 +55,118 @@
 
   <!-- ===== Portada ===== -->
   <section class="portada" id="inicio">
-    <canvas class="circuitos" id="circuitos" aria-hidden="true"></canvas>
-    <div class="contenedor portada-grid">
-      <div class="portada-texto">
-        <p class="rotulo"><span class="led"></span> Tecnología a medida</p>
-        <h1>Microapps y automatización <span class="cian">a tu medida</span><span class="cursor" aria-hidden="true">_</span></h1>
-        <p class="bajada">Creamos <strong>microapps a medida</strong> y soluciones de automatización con <strong>ESP32</strong>, <strong>Arduino</strong>, <strong>sensores</strong> y <strong>actuadores</strong>, además de <strong>inteligencia visual</strong> y <strong>sistemas de autoaprendizaje</strong>. Sistemas pequeños, claros y bien hechos, que resuelven un problema real.</p>
-        <div class="acciones">
-          <a class="boton" href="#contacto">Agenda tu consulta <span aria-hidden="true">▸</span></a>
-          <a class="boton boton-borde" href="#servicios">Ver qué hacemos</a>
-        </div>
-        <p class="eslogan">¿Lo que necesitas? <b>Agenda tu consulta</b> y buscamos una solución a tus necesidades informáticas y tecnológicas.</p>
-        <ul class="specs" aria-label="Tecnologías">
-          <li>ESP32</li><li>Arduino</li><li>Sensores</li><li>Actuadores</li><li>Visión</li><li>Autoaprendizaje</li><li>PWA</li>
-        </ul>
-      </div>
-
-      <div class="portada-panel">
-        <div class="consola" role="img" aria-label="Ejemplo de monitor serial de una placa ESP32 enviando lecturas">
-          <div class="consola-barra"><i></i><i></i><i></i><span>serial monitor · esp32-holbaph · 115200 baud</span></div>
-          <pre class="consola-cuerpo" id="consola" aria-hidden="true"><span class="c-cmd">&gt; boot holbaph-esp32 v1.0</span>
-<span class="c-ok">[ OK ]</span> wifi conectado  →  holbaph.cl
-<span class="c-ok">[ OK ]</span> sensor DHT22   temp=23.4°C hum=48%
-<span class="c-ok">[ OK ]</span> relé canal 1   estado=ON
-<span class="c-ok">[ OK ]</span> POST /api/lectura  →  200
-<span class="c-cmd">&gt; sistema listo</span></pre>
-        </div>
-
-        <div class="lecturas" aria-label="Lecturas de ejemplo (simuladas)">
-          <div class="lectura" data-sensor="temp" data-base="23.4" data-var="0.25" data-dec="1">
-            <span class="lectura-nombre">TEMPERATURA</span>
-            <span class="lectura-valor"><b>23.4</b><small>°C</small></span>
-            <svg viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true"><polyline points=""/></svg>
-          </div>
-          <div class="lectura" data-sensor="hum" data-base="48" data-var="0.7" data-dec="0">
-            <span class="lectura-nombre">HUMEDAD</span>
-            <span class="lectura-valor"><b>48</b><small>%</small></span>
-            <svg viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true"><polyline points=""/></svg>
-          </div>
-          <div class="lectura" data-sensor="w" data-base="312" data-var="9" data-dec="0">
-            <span class="lectura-nombre">CONSUMO</span>
-            <span class="lectura-valor"><b>312</b><small>W</small></span>
-            <svg viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true"><polyline points=""/></svg>
-          </div>
-        </div>
-        <p class="demo-nota">Datos de demostración simulados</p>
-      </div>
+    <span class="flota f1" aria-hidden="true">🔌</span>
+    <span class="flota f2" aria-hidden="true">🌡️</span>
+    <span class="flota f3" aria-hidden="true">👁️</span>
+    <span class="flota f4" aria-hidden="true">🧠</span>
+    <span class="flota f5" aria-hidden="true">📱</span>
+    <div class="w portada-int">
+      <p class="mini aparece">Tecnología a medida</p>
+      <h1 class="aparece">Microapps y automatización <span class="grad">a tu medida</span></h1>
+      <p class="sub aparece">Apps simples, placas ESP32 y Arduino, sensores, cámaras y modelos que aprenden. Una solución clara para cada necesidad.</p>
+      <p class="rotor aparece" aria-live="off">Hoy puedo ayudarte con <b id="rotor">microapps</b></p>
+      <a class="boton aparece" href="#contacto">Agenda tu consulta</a>
     </div>
   </section>
-
-  <!-- ===== Cinta de protocolos ===== -->
-  <div class="cinta" aria-hidden="true">
-    <div class="cinta-pista">
-      <span>ESP32</span><span>Arduino</span><span>WiFi</span><span>Bluetooth LE</span><span>MQTT</span><span>I²C</span><span>SPI</span><span>UART</span><span>PWM</span><span>ADC</span><span>GPIO</span><span>Visión por computador</span><span>Machine Learning</span><span>TinyML</span>
-      <span>ESP32</span><span>Arduino</span><span>WiFi</span><span>Bluetooth LE</span><span>MQTT</span><span>I²C</span><span>SPI</span><span>UART</span><span>PWM</span><span>ADC</span><span>GPIO</span><span>Visión por computador</span><span>Machine Learning</span><span>TinyML</span>
-    </div>
-  </div>
 
   <!-- ===== Servicios ===== -->
   <section class="seccion" id="servicios">
-    <div class="contenedor">
-      <header class="seccion-cab">
-        <p class="indice">01 // SERVICIOS</p>
-        <h2>De la placa a la pantalla</h2>
-        <p class="seccion-bajada">Software y hardware en un solo lugar: el sensor mide, el sistema decide y el actuador responde.</p>
-      </header>
-
-      <div class="modulos">
-        <article class="modulo reveal"><div class="modulo-int">
-          <span class="mod-id">MOD-01</span>
-          <div class="icono-caja"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
-          <h3>Microapps a medida</h3>
-          <p>Aplicaciones web livianas que se instalan en el celular y se usan como una app nativa, hechas para tu proceso: registros, controles, formularios y paneles.</p>
-          <ul class="mod-tags"><li>PWA</li><li>Web</li><li>Offline</li></ul>
-        </div></article>
-
-        <article class="modulo reveal"><div class="modulo-int">
-          <span class="mod-id">MOD-02</span>
-          <div class="icono-caja"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 3v3M12 3v3M15 3v3M9 18v3M12 18v3M15 18v3M3 9h3M3 12h3M3 15h3M18 9h3M18 12h3M18 15h3"/></svg></div>
-          <h3>Automatización con ESP32 y Arduino</h3>
-          <p>Placas ESP32 y Arduino que leen, deciden y accionan: automatizan tareas de tu casa, negocio o taller, con WiFi, Bluetooth o conexión directa.</p>
-          <ul class="mod-tags"><li>ESP32</li><li>Arduino</li><li>WiFi</li></ul>
-        </div></article>
-
-        <article class="modulo reveal"><div class="modulo-int">
-          <span class="mod-id">MOD-03</span>
-          <div class="icono-caja"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16a8 8 0 1 1 16 0"/><path d="M12 16l4-5"/><circle cx="12" cy="16" r="1.2"/></svg></div>
-          <h3>Sensores y mediciones</h3>
-          <p>Temperatura, humedad, nivel, movimiento, consumo eléctrico y más. Medimos, guardamos el historial y te mostramos gráficos y alertas.</p>
-          <ul class="mod-tags"><li>Tiempo real</li><li>Historial</li><li>Alertas</li></ul>
-        </div></article>
-
-        <article class="modulo reveal"><div class="modulo-int">
-          <span class="mod-id">MOD-04</span>
-          <div class="icono-caja"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></div>
-          <h3>Actuadores y control</h3>
-          <p>Relés, válvulas, motores y luces que responden a una medición, a un horario o a tu celular: riego, climatización, portones, iluminación.</p>
-          <ul class="mod-tags"><li>Relés</li><li>Motores</li><li>Horarios</li></ul>
-        </div></article>
-
-        <article class="modulo reveal"><div class="modulo-int">
-          <span class="mod-id">MOD-05</span>
-          <div class="icono-caja"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
-          <h3>Inteligencia visual</h3>
-          <p>Cámaras que entienden lo que ven: contar personas o productos, detectar presencia o fallas y leer valores desde imágenes.</p>
-          <ul class="mod-tags"><li>Cámara</li><li>Detección</li><li>Conteo</li></ul>
-        </div></article>
-
-        <article class="modulo reveal"><div class="modulo-int">
-          <span class="mod-id">MOD-06</span>
-          <div class="icono-caja"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 6l3.2 4.6M7 18l3.2-4.6M14 11l3.3-3.7M14 13l3.3 3.7"/></svg></div>
-          <h3>Sistemas de autoaprendizaje</h3>
-          <p>Modelos que aprenden de tus propios datos: predicen consumos o fallas, detectan comportamientos anómalos y mejoran con el tiempo.</p>
-          <ul class="mod-tags"><li>Predicción</li><li>Anomalías</li><li>ML</li></ul>
-        </div></article>
+    <div class="w">
+      <h2 class="reveal">Qué hacemos</h2>
+      <p class="intro reveal">Software y hardware en un solo lugar: el sensor mide, el sistema decide y el actuador responde.</p>
+      <div class="lista">
+        <div class="fila reveal"><span class="emo">📱</span><h3>Microapps a medida</h3><p>Aplicaciones livianas que se instalan en el celular y se usan como una app nativa, hechas para tu proceso.</p></div>
+        <div class="fila reveal"><span class="emo">🔌</span><h3>Automatización con ESP32 y Arduino</h3><p>Placas que leen, deciden y accionan: automatizan tareas de tu casa, negocio o taller.</p></div>
+        <div class="fila reveal"><span class="emo">🌡️</span><h3>Sensores y mediciones</h3><p>Temperatura, humedad, nivel, consumo y más, con historial, gráficos y alertas.</p></div>
+        <div class="fila reveal"><span class="emo">⚙️</span><h3>Actuadores y control</h3><p>Relés, válvulas, motores y luces que responden a una medición, a un horario o a tu celular.</p></div>
+        <div class="fila reveal"><span class="emo">👁️</span><h3>Inteligencia visual</h3><p>Cámaras que entienden lo que ven: cuentan, detectan presencia o fallas y leen valores.</p></div>
+        <div class="fila reveal"><span class="emo">🧠</span><h3>Sistemas de autoaprendizaje</h3><p>Modelos que aprenden de tus datos para predecir consumos o fallas y detectar anomalías.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ===== Ejemplos (hoja de datos) ===== -->
-  <section class="seccion seccion-alt" id="ejemplos">
-    <div class="contenedor">
-      <header class="seccion-cab">
-        <p class="indice">02 // EJEMPLOS</p>
-        <h2>Ideas que se pueden construir</h2>
-        <p class="seccion-bajada">Como en una hoja de datos: qué mide, qué controla y qué recibes. (Los pines son ilustrativos.)</p>
-      </header>
-
-      <div class="tabla-marco reveal">
-        <table class="datasheet">
-          <thead><tr><th>Pin</th><th>Caso de uso</th><th>Cómo funciona</th><th>Resultado</th></tr></thead>
-          <tbody>
-            <tr><td data-k="Pin"><code>GPIO 04</code></td><td data-k="Caso"><strong>Riego inteligente</strong></td><td data-k="Funciona">Sensor de humedad de suelo → relé de la bomba</td><td data-k="Resultado">Riega solo si hace falta y avisa al celular</td></tr>
-            <tr><td data-k="Pin"><code>GPIO 05</code></td><td data-k="Caso"><strong>Control de temperatura</strong></td><td data-k="Funciona">Sonda en bodega, sala o cámara de frío</td><td data-k="Resultado">Alerta si la temperatura sale de rango</td></tr>
-            <tr><td data-k="Pin"><code>GPIO 12</code></td><td data-k="Caso"><strong>Casa conectada</strong></td><td data-k="Funciona">Relés en luces, enchufes y portón</td><td data-k="Resultado">Escenas, horarios y control desde el celular</td></tr>
-            <tr><td data-k="Pin"><code>ADC 34</code></td><td data-k="Caso"><strong>Medidor de consumo</strong></td><td data-k="Funciona">Sensor de corriente por equipo</td><td data-k="Resultado">Gráficos de energía por día y por mes</td></tr>
-            <tr><td data-k="Pin"><code>CAM 0</code></td><td data-k="Caso"><strong>Inteligencia visual</strong></td><td data-k="Funciona">Cámara con un modelo que reconoce o cuenta</td><td data-k="Resultado">Conteo de personas o productos, o aviso ante una falla</td></tr>
-            <tr><td data-k="Pin"><code>ML</code></td><td data-k="Caso"><strong>Autoaprendizaje</strong></td><td data-k="Funciona">Modelo que aprende de tus datos históricos</td><td data-k="Resultado">Predice consumos, demanda o fallas antes de que ocurran</td></tr>
-            <tr><td data-k="Pin"><code>HTTPS 443</code></td><td data-k="Caso"><strong>Panel de inventario</strong></td><td data-k="Funciona">Microapp web instalable (PWA)</td><td data-k="Resultado">Stock, entradas y salidas de un negocio pequeño</td></tr>
-          </tbody>
-        </table>
+  <!-- ===== Ejemplos ===== -->
+  <section class="seccion alt" id="ejemplos">
+    <div class="w">
+      <h2 class="reveal">Ideas que se pueden construir</h2>
+      <div class="ideas">
+        <p class="reveal"><span>🌱</span><span><b>Riego inteligente</b> — riega solo si hace falta y te avisa al celular.</span></p>
+        <p class="reveal"><span>❄️</span><span><b>Control de temperatura</b> — alerta si una bodega o cámara de frío se sale de rango.</span></p>
+        <p class="reveal"><span>🏠</span><span><b>Casa conectada</b> — luces, enchufes y portón con horarios y escenas.</span></p>
+        <p class="reveal"><span>⚡</span><span><b>Medidor de consumo</b> — cuánta energía gasta cada equipo, por día y por mes.</span></p>
+        <p class="reveal"><span>📷</span><span><b>Conteo con cámara</b> — personas o productos contados y registrados solos.</span></p>
+        <p class="reveal"><span>📦</span><span><b>Panel de inventario</b> — stock, entradas y salidas de un negocio pequeño.</span></p>
       </div>
     </div>
   </section>
 
   <!-- ===== Proceso ===== -->
   <section class="seccion" id="proceso">
-    <div class="contenedor">
-      <header class="seccion-cab">
-        <p class="indice">03 // PROCESO</p>
-        <h2>Simple, rápido y contigo en el centro</h2>
-      </header>
-
-      <ol class="pipeline" id="pipeline">
-        <li><span class="pad">1</span><span class="fase">FASE 1 / 4</span><h3>Agendamos tu consulta</h3><p>Entendemos el problema, qué quieres lograr y con qué cuentas hoy.</p></li>
-        <li><span class="pad">2</span><span class="fase">FASE 2 / 4</span><h3>Diseñamos</h3><p>Te proponemos una solución simple, con alcance, plazo y costo claros.</p></li>
-        <li><span class="pad">3</span><span class="fase">FASE 3 / 4</span><h3>Construimos</h3><p>Armamos un prototipo rápido y lo ajustamos contigo hasta que funcione como necesitas.</p></li>
-        <li><span class="pad">4</span><span class="fase">FASE 4 / 4</span><h3>Implementamos y acompañamos</h3><p>Lo dejamos funcionando y seguimos disponibles para ajustarlo y mejorarlo.</p></li>
+    <div class="w">
+      <h2 class="reveal">Cómo trabajamos</h2>
+      <ol class="pasos">
+        <li class="reveal"><span class="n">1</span><h3>Agendamos tu consulta</h3><p>Entendemos el problema y con qué cuentas hoy.</p></li>
+        <li class="reveal"><span class="n">2</span><h3>Diseñamos</h3><p>Una solución simple, con alcance, plazo y costo claros.</p></li>
+        <li class="reveal"><span class="n">3</span><h3>Construimos</h3><p>Un prototipo rápido, ajustado contigo hasta que funcione.</p></li>
+        <li class="reveal"><span class="n">4</span><h3>Implementamos</h3><p>Lo dejamos funcionando y seguimos a tu lado para mejorarlo.</p></li>
       </ol>
-
-      <ul class="garantias">
-        <li class="reveal"><span class="led"></span><div><strong>Hecho a tu medida</strong><span>Sin pagar por funciones que no vas a usar.</span></div></li>
-        <li class="reveal"><span class="led"></span><div><strong>Primero conversamos</strong><span>La consulta aclara la necesidad antes de construir nada.</span></div></li>
-        <li class="reveal"><span class="led"></span><div><strong>Hardware + software</strong><span>Un solo equipo para todo el sistema, de punta a punta.</span></div></li>
-      </ul>
     </div>
   </section>
 
   <!-- ===== Microapps ===== -->
-  <section class="seccion seccion-alt" id="proyectos">
-    <div class="contenedor">
-      <header class="seccion-cab">
-        <p class="indice">04 // MICROAPPS</p>
-        <h2>Microapps en funcionamiento</h2>
-        <p class="seccion-bajada">Cada microapp vive en su propia dirección y se usa desde el celular. Estas son algunas; sumamos nuevas todo el tiempo.</p>
-      </header>
+  <section class="seccion alt" id="microapps">
+    <div class="w">
+      <h2 class="reveal">Microapps en funcionamiento</h2>
+      <p class="intro reveal">Cada microapp vive en su propia dirección y se usa desde el celular.</p>
 
-      <!-- Para agregar una microapp: duplica un bloque .app-ventana (y cambia título, texto, chips y enlace). -->
-      <div class="app-ventana reveal">
-        <div class="app-barra">
-          <span class="app-estado"><span class="led led-verde"></span> ONLINE</span>
-          <span class="app-url">holbaph.github.io/ocuparche</span>
-          <span class="app-tipo">PWA · plan gratis + plan completo</span>
+      <!-- Para agregar una microapp: duplica un bloque .app (y cambia emoji, título, texto y enlaces). -->
+      <div class="app reveal">
+        <span class="emo grande">👁️</span>
+        <div class="app-txt">
+          <h3>Ocuparche</h3>
+          <p>Constancia diaria del parche ocular, para familias. Registra cada día el tratamiento de tus hijos, con temporizador, aviso al celular cuando se cumple el tiempo, varios pacientes y sincronización en vivo entre los dispositivos de la familia.</p>
+          <p class="etiq"><span>PWA</span><span>Plan gratis + completo</span><span>Avisos push</span></p>
         </div>
-        <div class="app-cuerpo">
-          <div class="app-info">
-            <h3>Ocuparche</h3>
-            <p>Constancia diaria del parche ocular, para familias. Registra cada día el tratamiento de tus hijos, con temporizador, aviso al celular cuando se cumple el tiempo, varios pacientes y sincronización en vivo entre los dispositivos de la familia. Se instala en el celular como una app.</p>
-            <ul class="specs specs-chicos"><li>PWA</li><li>Cloudflare Workers</li><li>D1</li><li>WebSocket</li><li>Push</li></ul>
-            <div class="acciones">
-              <a class="boton boton-chico" href="https://ocuparche-api.pablo-hernandez003.workers.dev/app.html" rel="noopener">Abrir app <span aria-hidden="true">▸</span></a>
-              <a class="boton boton-borde boton-chico" href="https://holbaph.github.io/ocuparche/" rel="noopener">Ver sitio</a>
-            </div>
-          </div>
-          <div class="app-visual" aria-hidden="true">
-            <div class="telefono">
-              <div class="telefono-barra"></div>
-              <div class="mini-tarjeta"><span>Hoy</span><strong>2 h 30 min</strong></div>
-              <div class="mini-progreso"><i class="p62"></i></div>
-              <div class="semana"><b class="ok">L</b><b class="ok">M</b><b class="ok">M</b><b class="ok">J</b><b class="hoy">V</b><b>S</b><b>D</b></div>
-              <div class="mini-fila"><span>Temporizador</span><b class="ok">En curso</b></div>
-              <div class="mini-fila"><span>Aviso al celular</span><b class="ok">Activo</b></div>
-            </div>
-          </div>
+        <div class="app-acc">
+          <a class="boton" href="https://ocuparche-api.pablo-hernandez003.workers.dev/app.html" rel="noopener">Abrir app</a>
+          <a class="enlace-sec" href="https://holbaph.github.io/ocuparche/" rel="noopener">Ver sitio →</a>
         </div>
       </div>
 
-      <div class="slot reveal">
-        <div class="slot-chip" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-        <div class="slot-texto">
-          <p class="indice">SLOT LIBRE</p>
+      <div class="app libre reveal">
+        <span class="emo grande">✨</span>
+        <div class="app-txt">
           <h3>Tu próxima microapp, aquí</h3>
-          <p>La diseñamos y la construimos a tu medida, y la dejamos funcionando en su propia dirección (por ejemplo <strong>tuapp.holbaph.cl</strong>).</p>
+          <p>La diseñamos y la construimos a tu medida, y la dejamos funcionando en su propia dirección (por ejemplo <b>tuapp.holbaph.cl</b>).</p>
         </div>
-        <a class="boton" href="#contacto">Agenda tu consulta <span aria-hidden="true">▸</span></a>
+        <div class="app-acc"><a class="boton sec" href="#contacto">Agenda tu consulta</a></div>
       </div>
     </div>
   </section>
 
   <!-- ===== Contacto ===== -->
-  <section class="seccion contacto" id="contacto">
-    <div class="contenedor contacto-grid">
-      <div>
-        <p class="indice">05 // AGENDA</p>
-        <h2>¿Lo que necesitas? Agenda tu consulta</h2>
-        <p class="seccion-bajada">Buscamos juntos una solución a tus necesidades informáticas y tecnológicas. Cuéntanos qué necesitas, aunque todavía sea una idea a medias, y te proponemos cómo resolverlo.</p>
-        <p class="contacto-directo">También puedes escribirnos a <a id="correoDirecto" href="mailto:contacto@holbaph.cl">contacto@holbaph.cl</a></p>
+  <section class="seccion" id="contacto">
+    <div class="w contacto">
+      <div class="reveal">
+        <h2>¿Lo que necesitas? <span class="grad">Agenda tu consulta</span></h2>
+        <p class="intro">Buscamos juntos una solución a tus necesidades informáticas y tecnológicas. Cuéntanos qué necesitas, aunque todavía sea una idea a medias, y te proponemos cómo resolverlo.</p>
+        <p class="directo">También puedes escribirnos a <a id="correoDirecto" href="mailto:contacto@holbaph.cl">contacto@holbaph.cl</a></p>
       </div>
-
-      <form class="formulario" id="formContacto" novalidate>
-        <div class="formulario-barra"><i></i><i></i><i></i><span>agendar_consulta.sh</span></div>
-        <label><span>&gt; nombre</span>
+      <form class="form reveal" id="formContacto" novalidate>
+        <label>Tu nombre
           <input type="text" name="nombre" autocomplete="name" required>
         </label>
-        <label><span>&gt; correo</span>
+        <label>Tu correo
           <input type="email" name="correo" autocomplete="email" required>
         </label>
-        <label><span>&gt; que_necesitas</span>
-          <textarea name="mensaje" rows="5" placeholder="Ej: quiero medir la temperatura de mi bodega y recibir una alerta en el celular" required></textarea>
+        <label>¿Qué necesitas?
+          <textarea name="mensaje" rows="4" placeholder="Ej: quiero medir la temperatura de mi bodega y recibir una alerta en el celular" required></textarea>
         </label>
-        <label><span>&gt; cuando_te_acomoda (opcional)</span>
+        <label>¿Cuándo te acomoda? <small>(opcional)</small>
           <input type="text" name="cuando" placeholder="Ej: martes o jueves por la tarde">
         </label>
-        <button class="boton boton-ancho" type="submit">Agendar consulta <span aria-hidden="true">▸</span></button>
-        <p class="formulario-nota" id="formNota" role="status" aria-live="polite">Se abrirá tu aplicación de correo con la solicitud lista para enviar.</p>
+        <button class="boton ancho" type="submit">Agendar consulta</button>
+        <p class="nota" id="formNota" role="status" aria-live="polite">Se abrirá tu aplicación de correo con la solicitud lista para enviar.</p>
       </form>
     </div>
   </section>
@@ -305,9 +174,9 @@
 </main>
 
 <footer class="pie">
-  <div class="contenedor pie-fila">
+  <div class="w pie-fila">
     <span>© <span id="anio">2026</span> Holbaph Technologies · Chile</span>
-    <span class="pie-lema"><span class="led led-verde"></span> Microapps, ESP32, Arduino, visión y autoaprendizaje a medida</span>
+    <span>Hecho con cariño y un poco de cafeína ☕</span>
   </div>
 </footer>
 
